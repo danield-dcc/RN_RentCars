@@ -21,6 +21,7 @@ import AppLoading from "expo-app-loading";
 import theme from "./src/styles/theme";
 import { CarDetails } from "./src/Screens/CarDetails";
 import { View } from "react-native";
+import { Scheduling } from "./src/Screens/Scheduling";
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -71,7 +72,8 @@ export default function App() {
     <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>
         {/* <Home /> */}
-        <CarDetails />
+        {/* <CarDetails /> */}
+        <Scheduling />
       </ThemeProvider>
     </View>
   );
