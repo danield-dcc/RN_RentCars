@@ -22,6 +22,7 @@ import theme from "./src/styles/theme";
 import { CarDetails } from "./src/Screens/CarDetails";
 import { View } from "react-native";
 import { Scheduling } from "./src/Screens/Scheduling";
+import { SchedulingDetails } from "./src/Screens/SchedulingDetails";
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -73,7 +74,8 @@ export default function App() {
       <ThemeProvider theme={theme}>
         {/* <Home /> */}
         {/* <CarDetails /> */}
-        <Scheduling />
+        {/* <Scheduling /> */}
+        <SchedulingDetails />
       </ThemeProvider>
     </View>
   );
