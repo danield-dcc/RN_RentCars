@@ -1,10 +1,13 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { View } from "react-native";
 
 import {
   useFonts,
   Inter_400Regular,
   Inter_500Medium,
 } from "@expo-google-fonts/inter";
+import { ThemeProvider } from "styled-components";
+import theme from "./src/styles/theme";
 
 import {
   Archivo_400Regular,
@@ -13,16 +16,14 @@ import {
 } from "@expo-google-fonts/archivo";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
+import AppLoading from "expo-app-loading";
 
 import { Home } from "./src/Screens/Home";
 
-import { ThemeProvider } from "styled-components";
-import AppLoading from "expo-app-loading";
-import theme from "./src/styles/theme";
 import { CarDetails } from "./src/Screens/CarDetails";
-import { View } from "react-native";
 import { Scheduling } from "./src/Screens/Scheduling";
 import { SchedulingDetails } from "./src/Screens/SchedulingDetails";
+import { SchedulingComplete } from "./src/Screens/SchedulingComplete";
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -75,7 +76,8 @@ export default function App() {
         {/* <Home /> */}
         {/* <CarDetails /> */}
         {/* <Scheduling /> */}
-        <SchedulingDetails />
+        {/* <SchedulingDetails /> */}
+        <SchedulingComplete />
       </ThemeProvider>
     </View>
   );
