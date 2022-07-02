@@ -12,6 +12,7 @@ import {
   CarImage,
 } from "./styles";
 import GasolineSvg from "../../assets/gasoline.svg";
+import { RectButtonProps } from "react-native-gesture-handler";
 
 interface CarData {
   brand: string;
@@ -23,13 +24,15 @@ interface CarData {
   thumbnail: string;
 }
 
-interface Props {
+//extends para pegar as propriedade de Botão
+interface Props extends RectButtonProps {
   data: CarData;
 }
 
-export function Car({ data }: Props) {
+//essas propriedades são passadas através do ...props
+export function Car({ data, ...props }: Props) {
   return (
-    <Container>
+    <Container {...props}>
       <Details>
         <Brand>{data.brand}</Brand>
         <Name>{data.name}</Name>

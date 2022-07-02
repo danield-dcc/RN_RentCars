@@ -16,29 +16,13 @@ import {
 } from "@expo-google-fonts/archivo";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
-import AppLoading from "expo-app-loading";
 
-import { Home } from "./src/Screens/Home";
-
-import { CarDetails } from "./src/Screens/CarDetails";
-import { Scheduling } from "./src/Screens/Scheduling";
-import { SchedulingDetails } from "./src/Screens/SchedulingDetails";
-import { SchedulingComplete } from "./src/Screens/SchedulingComplete";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
-  // const [fontsLoaded] = useFonts({
-  //   Inter_400Regular,
-  //   Inter_500Medium,
-  //   Archivo_400Regular,
-  //   Archivo_500Medium,
-  //   Archivo_600SemiBold,
-  // });
 
-  // if (!fontsLoaded) {
-  //   return <AppLoading />;
-  // }
-
+  //o método AppLoading não é mais suportado
   useEffect(() => {
     async function prepare() {
       try {
@@ -73,11 +57,7 @@ export default function App() {
   return (
     <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>
-        {/* <Home /> */}
-        {/* <CarDetails /> */}
-        {/* <Scheduling /> */}
-        {/* <SchedulingDetails /> */}
-        <SchedulingComplete />
+        <Routes />
       </ThemeProvider>
     </View>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { useWindowDimensions } from "react-native";
+import { StatusBar, useWindowDimensions } from "react-native";
 
 import {
   Container,
@@ -12,11 +12,24 @@ import {
 import LogoSvg from "../../assets/logo_background_gray.svg";
 import DoneSvg from "../../assets/done.svg";
 import { ConfirmButton } from "../../components/ConfirmButton";
+import { useNavigation } from "@react-navigation/native";
 
 export function SchedulingComplete() {
   const { width } = useWindowDimensions();
+
+  const navigation = useNavigation<any>();
+
+  function handleConfirm() {
+    navigation.navigate("Home");
+  }
   return (
     <Container>
+      {/* Status bar mostar a barrra de status superior no celular */}
+      <StatusBar
+        barStyle="light-content"
+        translucent
+        backgroundColor="transparent"
+      />
       <WrapperLogo>
         <LogoSvg width={width} />
       </WrapperLogo>
@@ -32,7 +45,7 @@ export function SchedulingComplete() {
 
         {/* <ConfirmButton /> */}
         <Footer>
-          <ConfirmButton title="Ok" />
+          <ConfirmButton title="OK" onPress={handleConfirm} />
         </Footer>
       </Content>
     </Container>
